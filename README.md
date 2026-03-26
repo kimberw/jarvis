@@ -72,7 +72,7 @@ Your message → Detect intent → Choose mode → Teach / Learn / Practice → 
 
 ### Persistence
 
-All progress saves to disk automatically:
+All progress saves to **`{project}/jarvis/`** — the current working directory (project root), not the skill installation path. This means progress syncs automatically across Cursor, Claude Code, Codex, or any tool opening the same project.
 
 - **`session.md`** — progress, scores, concept map, log (updated every round)
 - **`student-profile.md`** — your effective strategies, strengths, patterns (updated every session)
@@ -94,18 +94,21 @@ Jarvis generates rich visuals at key learning moments:
 
 ## Output Directory
 
+All data lives in `jarvis/` at your project root — shared by all AI tools:
+
 ```
-jarvis/
-├── knowledge-graph.md              # Cross-topic connections (persists across all topics)
-└── {topic-slug}/
-    ├── session.md                  # Learning state, mastery scores, session log
-    ├── student-profile.md          # How you learn best
-    ├── tutor-insights.md           # How Jarvis learns to teach you better
-    ├── roadmap.html                # Visual learning roadmap
-    ├── summary.html                # Session summary
-    ├── concept-map/                # Excalidraw concept maps
-    ├── visuals/                    # HTML explanations, code walkthroughs
-    └── materials/                  # Your own textbooks, slides, notes (auto-detected)
+your-project/
+└── jarvis/
+    ├── knowledge-graph.md              # Cross-topic connections (persists across all topics)
+    └── {topic-slug}/
+        ├── session.md                  # Learning state, mastery scores, session log
+        ├── student-profile.md          # How you learn best
+        ├── tutor-insights.md           # How Jarvis learns to teach you better
+        ├── roadmap.html                # Visual learning roadmap
+        ├── summary.html                # Session summary
+        ├── concept-map/                # Excalidraw concept maps
+        ├── visuals/                    # HTML explanations, code walkthroughs
+        └── materials/                  # Your own textbooks, slides, notes (auto-detected)
 ```
 
 ## Local Materials

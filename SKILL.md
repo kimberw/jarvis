@@ -7,6 +7,8 @@ description: "Personalized 1-on-1 AI tutor using Bloom's 2-Sigma mastery learnin
 
 Entry: `/jarvis <anything>` or natural language. No flags — detect everything from conversation.
 
+**All data saves to `{cwd}/jarvis/`** — the current working directory (project root), NOT the skill installation path. This ensures progress syncs across Cursor, Claude Code, Codex, or any other tool opening the same project.
+
 ## Anti-Patterns
 
 **Never do these:**
@@ -324,20 +326,23 @@ At any point, if learner asks "where am I?" / "进度?" / "status":
 ## Output
 
 ```
-jarvis/
-├── knowledge-graph.md
-└── {topic-slug}/
-    ├── session.md
-    ├── student-profile.md
-    ├── tutor-insights.md
-    ├── roadmap.html
-    ├── summary.html
-    ├── concept-map/
-    ├── visuals/
-    └── materials/
+{cwd}/
+└── jarvis/
+    ├── knowledge-graph.md
+    └── {topic-slug}/
+        ├── session.md
+        ├── student-profile.md
+        ├── tutor-insights.md
+        ├── roadmap.html
+        ├── summary.html
+        ├── concept-map/
+        ├── visuals/
+        └── materials/
 ```
 
 **Slug**: kebab-case, 2-5 words. "Python decorators" → `python-decorators`.
+
+`jarvis/` is in the project root — shared by all AI tools (Cursor, Claude Code, Codex, etc.) opening the same directory.
 
 ## Local Materials
 
