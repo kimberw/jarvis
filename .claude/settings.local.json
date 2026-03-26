@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fsck:*)",
+      "Bash(rm -rf .git && git init)"
+    ]
+  }
+}
